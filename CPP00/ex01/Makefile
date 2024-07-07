@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kaan <kaan@student.42.fr>                  +#+  +:+       +#+         #
+#    By: kaan <kaan@student.42.de>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/03 15:21:39 by kaan              #+#    #+#              #
-#    Updated: 2024/07/03 18:28:20 by kaan             ###   ########.fr        #
+#    Updated: 2024/07/07 17:35:15 by kaan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = phonebook
 
-SRC = ex01.cpp
+SRC = main.cpp\
 
 OBJ	= $(SRC:.cpp=.o)
 
