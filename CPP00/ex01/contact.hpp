@@ -6,7 +6,7 @@
 /*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 14:14:15 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/07 19:34:30 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/10 16:26:52 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CONTACT_HPP
 
 #include <iostream>
+#include <iomanip>
 
 class Contact
 {   
@@ -49,10 +50,13 @@ class Contact
         do {
             std::cout << "Enter first name: ";
             getline(std::cin, _firstName);
+            if (_firstName.empty()) {
+                std::cout << "Input shall not be empty\n";
+            }
             if (!input_alph(_firstName)) {
                 std::cout << "Input must be alphabet\n";
             }
-        } while (!input_alph(_firstName));
+        } while (!input_alph(_firstName) || _firstName.empty());
     }
 
     void setLastName() {
@@ -74,10 +78,13 @@ class Contact
         do {
             std::cout << "Enter phone number: ";
             getline(std::cin, _phoneNumber);
+            if (_phoneNumber.empty()) {
+                std::cout << "Input shall not be empty\n";
+            }
             if (!input_digit(_phoneNumber)) {
             std::cout << "Input must be number\n";
             }
-        } while (!input_digit(_phoneNumber));
+        } while (!input_digit(_phoneNumber) || _phoneNumber.empty());
         
     }
     
@@ -92,6 +99,7 @@ class Contact
         std::cout << "Nickname: " << _nickName << std::endl;
         std::cout << "Phone Number: " << _phoneNumber << std::endl;
         std::cout << "Darkest Secret: " << _darkestSecret << std::endl; 
+        std::cout << "\n";
     }
 
     std::string getFirstName() {
