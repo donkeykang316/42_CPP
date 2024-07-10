@@ -1,43 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 10:47:40 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/11 00:16:44 by kaan             ###   ########.fr       */
+/*   Created: 2024/07/10 23:38:06 by kaan              #+#    #+#             */
+/*   Updated: 2024/07/11 00:21:40 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#include "Weapon.hpp"
 
-#include <iostream>
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
 
-class Zombie
+class HumanA
 {
 private:
+    Weapon&      _weapon;
     std::string _name;
-    int         _index;
 
 public:
-    Zombie() {}
+    HumanA(std::string Name, Weapon weaponType) : _name(Name), _weapon(weaponType) {}
     
-    ~Zombie() {
-        std::cout << _name <<" is killed\n";
+    ~HumanA() {
+        std::cout << _name << " is killed\n";
     }
 
-    void annouce() {
-        std::cout << _name << ": BraiiiiiiinnnzzzZ...\n";
+    void attack() {
+        std::cout << _name << " attacks with their " << _weapon.getType() << std::endl;
     }
-
-    void setZombie(std::string name) {
-        _name = name;
-    }
-
 };
-
-Zombie* zombieHorde(int N, std::string name);
 
 #endif

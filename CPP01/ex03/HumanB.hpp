@@ -1,43 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 10:47:40 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/11 00:16:44 by kaan             ###   ########.fr       */
+/*   Created: 2024/07/10 23:38:21 by kaan              #+#    #+#             */
+/*   Updated: 2024/07/11 00:21:50 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#include "Weapon.hpp"
 
-#include <iostream>
+#ifndef HUMANB_HPP
+#define HUMANB_HPP
 
-class Zombie
+class HumanB
 {
 private:
+    Weapon      _weapon;
     std::string _name;
-    int         _index;
 
 public:
-    Zombie() {}
+    HumanB(std::string Name) : _name(Name), _weapon("") {}
     
-    ~Zombie() {
-        std::cout << _name <<" is killed\n";
+    ~HumanB() {
+        std::cout << _name << " is killed\n";
     }
 
-    void annouce() {
-        std::cout << _name << ": BraiiiiiiinnnzzzZ...\n";
+    void attack() {
+        std::cout << _name << " attacks with their " << _weapon.getType() << std::endl;
     }
 
-    void setZombie(std::string name) {
-        _name = name;
+    void setWeapon(Weapon weaponType) {
+        std::string weaponT = weaponType.getType();
+        _weapon.setType(weaponT);
     }
-
 };
-
-Zombie* zombieHorde(int N, std::string name);
 
 #endif
