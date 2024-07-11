@@ -6,7 +6,7 @@
 /*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 21:08:58 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/11 21:13:14 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/11 22:20:21 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,28 @@ class Harl
 {
 private:
     void debug(void) {
-
+        std::cout << "Debug yourself" << std::endl;
     }
 
     void info(void) {
-
+        std::cout << "Google your own info" << std::endl;
     }
 
     void warning(void) {
-
+        std::cout << "Hey! STOP!" << std::endl;
     }
 
     void error(void) {
-        
+        std::cout << "BOOOO!!!! WRONG!!!!" << std::endl;
     }
 
 public:
     Harl() = default;
     ~Harl() = default;
+
+    void complain(std::string level);
 };
+
+typedef void (Harl::*t_func) (void);
 
 #endif
