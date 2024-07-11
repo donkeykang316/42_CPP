@@ -6,7 +6,7 @@
 /*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 23:38:06 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/11 00:21:40 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/11 10:53:57 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ private:
     std::string _name;
 
 public:
-    HumanA(std::string Name, Weapon weaponType) : _name(Name), _weapon(weaponType) {}
+    HumanA(std::string Name, Weapon& weaponType) : _name(Name), _weapon(weaponType) {}
     
     ~HumanA() {
-        std::cout << _name << " is killed\n";
+        //std::cout << _name << " is killed\n";
     }
 
     void attack() {
