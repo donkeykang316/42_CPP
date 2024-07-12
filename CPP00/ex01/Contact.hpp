@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 14:14:15 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/10 16:26:52 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/12 09:54:17 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 class Contact
 {   
     private:
+    int         _index = 0;
     std::string _firstName;
     std::string _lastName;
     std::string _nickName;
@@ -44,6 +45,10 @@ class Contact
             }
         }
         return true;
+    }
+
+    void setIndex(int Index) {
+        _index = Index;
     }
 
     void setFirstName() {
@@ -100,6 +105,10 @@ class Contact
         std::cout << "Phone Number: " << _phoneNumber << std::endl;
         std::cout << "Darkest Secret: " << _darkestSecret << std::endl; 
         std::cout << "\n";
+    }
+
+    int getIndex() {
+        return _index;
     }
 
     std::string getFirstName() {
