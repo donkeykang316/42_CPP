@@ -5,14 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kaan <kaan@student.42.de>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/07/03 15:21:39 by kaan              #+#    #+#              #
-#    Updated: 2024/07/12 09:06:48 by kaan             ###   ########.fr        #
+#    Created: 2024/07/07 20:28:20 by kaan              #+#    #+#              #
+#    Updated: 2024/07/12 11:47:26 by kaan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = ex00
 
-SRC = Megaphone.cpp
+SRC = main.cpp\
+		Fixed.cpp\
 
 OBJ	= $(SRC:.cpp=.o)
 
