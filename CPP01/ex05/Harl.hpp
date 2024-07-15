@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
+/*   By: kaan <kaan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 21:08:58 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/11 22:20:21 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/15 15:51:51 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ private:
     }
 
 public:
-    Harl() = default;
-    ~Harl() = default;
+    Harl() {}
+    ~Harl() {}
 
     void complain(std::string level);
 };

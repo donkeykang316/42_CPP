@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   File.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
+/*   By: kaan <kaan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 11:13:13 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/11 21:02:30 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/15 15:48:44 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ private:
 public:
     File() {}
 
-    ~File() = default;
+    ~File() {}
 
     void replace(std::string FileName, std::string String1, std::string String2) {
         _fileName = FileName;
@@ -39,16 +39,16 @@ public:
     }
 
     void creatNewFile() {
-        std::ifstream   inputFile(_fileName);
+        std::ifstream   inputFile(_fileName.c_str());
         std::string     Line;
         std::string     Temp;
         std::size_t     po;
 
-        std::ofstream   outputFile(_newFile);
         if (!inputFile) {
             std::cerr << "Open error!\n";
-            exit(EXIT_FAILURE);
+            return;
         }
+        std::ofstream   outputFile(_newFile.c_str());
         do {
             if (!Line.empty()) {
                 po = getString(Line);
