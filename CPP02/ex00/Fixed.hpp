@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
+/*   By: kaan <kaan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 11:47:30 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/12 18:19:21 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/15 17:18:34 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ private:
 public:
     Fixed();
     Fixed(const Fixed& FixedCopy);
-    Fixed& operator=(const Fixed& Other);
     ~Fixed();
-    int getRawBits();
+    
+    Fixed& operator=(const Fixed& Other);
+    int getRawBits()const;
     void setRawBits(int const raw);
 };
 
