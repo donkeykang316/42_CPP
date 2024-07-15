@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
+/*   By: kaan <kaan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 18:31:38 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/12 10:46:28 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/15 15:09:41 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ class Phonebook
 {
     private:
         Contact     _contacts[8];
-        int         _index = 0;
+        int         _index;
 
     public:
-        Phonebook() {}
+        Phonebook() : _index(0) {}
 
         enum Command {
                         ADD,
@@ -98,7 +98,11 @@ class Phonebook
                 if (_contacts[i].getFirstName().empty()) {
                     break;
                 }
-                if (std::stoi(input) == _contacts[i].getIndex()) {
+                if (input.length() > 1) {
+                    std::cout << "Invalid Input\n\n";
+                    return;
+                }
+                if ((input[0] - 48) == _contacts[i].getIndex()) {
                     _contacts[i].display();
                     found = true;
                     break;

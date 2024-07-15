@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
+/*   By: kaan <kaan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 14:14:15 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/12 09:54:17 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/15 14:52:11 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Contact
 {   
     private:
-    int         _index = 0;
+    int          _index;
     std::string _firstName;
     std::string _lastName;
     std::string _nickName;
@@ -27,11 +27,11 @@ class Contact
     std::string _darkestSecret;
 
     public:
-    Contact() {}
+    Contact() : _index(0) {}
 
     bool input_digit(std::string string) {
-        for (char c : string) {
-            if (!isdigit(c)) {
+        for (int i = 0; string[i] != 0;  ++i) {
+            if (!isdigit(string[i])) {
                 return false;
             }
         }
@@ -39,8 +39,8 @@ class Contact
     }
 
     bool input_alph(std::string string) {
-        for (char c : string) {
-            if (!isalpha(c)) {
+        for (int i = 0; string[i] != 0;  ++i) {
+            if (!isalpha(string[i])) {
                 return false;
             }
         }
