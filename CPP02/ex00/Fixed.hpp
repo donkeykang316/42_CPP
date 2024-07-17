@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaan <kaan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 11:47:30 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/15 17:26:01 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/17 12:56:49 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed
 {
 private:
     int                 _nbrValue;
-    static const int    _nbrFratBits;
+    static const int    _nbrFratBits = 8;
 
 public:
     Fixed();
