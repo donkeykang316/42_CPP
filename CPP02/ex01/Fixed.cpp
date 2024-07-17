@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaan <kaan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 14:34:22 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/16 15:54:19 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/17 16:51:40 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,14 @@ Fixed::Fixed(const Fixed& FixCopy) {
 Fixed& Fixed::operator=(const Fixed& Other) {
     std::cout << "Copy assignment operator called\n";
     this->_nbrValue = Other.getRawBits();
+    return *this;
 }
 
 int Fixed::getRawBits() const{
-    std::cout << "getRawBits member function called\n";
     return _nbrValue;
 }
 
 void Fixed::setRawBits(int const Raw) {
-    std::cout << "setRawBits member function called\n";
     _nbrValue = Raw;
 }
 
@@ -47,12 +46,17 @@ Fixed::Fixed(const int Value) {
 
 Fixed::Fixed(const float Value) {
     std::cout << "Float constructor called\n";
+    _nbrValue = roundf(Value * (1 << Fixed::_nbrFratBits));
 }
 
-float Fixed::toFloat() {
-    return this->_nbrValue;
+float Fixed::toFloat() const {
+    return ((float)_nbrValue / (1 << Fixed::_nbrFratBits));
 }
 
-int Fixed::toInt() {
-    return this->_nbrValue;
+int Fixed::toInt() const {
+    return ((int)_nbrValue / (1 << Fixed::_nbrFratBits));
+}
+
+std::ostream &operator<<(std::ostream &floatingRepresentation, const Fixed &nbrValue) {
+    return (floatingRepresentation << nbrValue.toFloat());
 }
