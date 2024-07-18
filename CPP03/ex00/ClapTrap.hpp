@@ -6,7 +6,7 @@
 /*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:02:19 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/17 21:29:11 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/18 16:43:04 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ public:
     int getEnergyPoint();
     int getAttackDamage();
 
+    void adjustHitpoint(int value);
+    void adjustEnergyPoint(int value);
+    
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);

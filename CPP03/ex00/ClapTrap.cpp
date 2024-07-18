@@ -6,13 +6,13 @@
 /*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:06:27 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/17 21:40:19 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/18 20:51:21 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() {
+ClapTrap::ClapTrap() : _name("Random"), _hitPoint(10), _energyPoint(10), _attackDamage(10) {
     std::cout << "A clap trap is going to be constructed\n";
 }
 
@@ -25,7 +25,7 @@ ClapTrap::ClapTrap(std::string name) {
     this->_attackDamage = 10;
     this->_energyPoint = 10;
     this->_hitPoint = 10;
-    std::cout << _name << "is ready\n";
+    std::cout << this->getName() << " is ready\n";
 }
 
 void ClapTrap::setName(std::string name) {
@@ -45,62 +45,65 @@ void ClapTrap::setAttackDamage(unsigned int value) {
 }
 
 std::string ClapTrap::getName() {
-    return _name;
+    return this->_name;
 }
 
 int ClapTrap::getHitPoint() {
-    return _hitPoint;
+    return this->_hitPoint;
 }
 
 int ClapTrap::getEnergyPoint() {
-    return _energyPoint;
+    return this->_energyPoint;
 }
 
 int ClapTrap::getAttackDamage() {
-    return _attackDamage;
+    return this->_attackDamage;
+}
+
+void ClapTrap::adjustHitpoint(int value) {
+    this->_hitPoint += value;
+}
+
+void ClapTrap::adjustEnergyPoint(int value) {
+    this->_energyPoint += value;
 }
 
 void ClapTrap::attack(const std::string& target) {
-    std::cout << _name << " is attacking " << target << std::endl;
-    if (_hitPoint == 0) {
-      std::cout << _name << " is broken"<< std::endl;
+    std::cout << this->getName() << " is attacking " << target << std::endl;
+    if (this->getHitPoint() <= 1) {
+      std::cout << this->getName() << " is broken and canot attack"<< std::endl;
       return;
     }
-    if (_energyPoint == 0) {
-      std::cout << _name << " has 0 energy"<< std::endl;
+    if (this->getEnergyPoint() <= 0) {
+      std::cout << this->getName() << " has 0 energy and cannot attack"<< std::endl;
       return;
     }
-    std::cout << target << " received " << _attackDamage << " damages" << std::endl;
-    this->setEnergyPoint(-1);
-    std::cout << _name << " has " << _energyPoint << " engery points left" << std::endl;
+    this->adjustEnergyPoint(-1);
+    std::cout << this->getName() << " has " << this->getEnergyPoint() << " engery points left" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-    if (_hitPoint == 0) {
-      std::cout << _name << " is already broken"<< std::endl;
+    if (this->getHitPoint() <= 0) {
+      std::cout << this->getName() << " is already broken"<< std::endl;
       return;
     }
-    if (_energyPoint == 0) {
-      std::cout << _name << " has 0 energy"<< std::endl;
-      return;
-    }
-    this->setHitPoint(amount);
-    std::cout << _name << " is taking " << amount << " damages" << std::endl;
-    std::cout << _name << " has " << _hitPoint << " hit points left" << std::endl;
+    this->adjustHitpoint(-amount);
+    std::cout << this->getName() << " is taking " << amount << " damages" << std::endl;
+    std::cout << this->getName() << " has " << this->getHitPoint() << " hit points left" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-    std::cout << _name << " is repairing" << std::endl;
-    if (_hitPoint == 0) {
-      std::cout << _name << " is broken"<< std::endl;
+    std::cout << this->getName() << " is repairing" << std::endl;
+    if (this->getHitPoint() <= 0) {
+      std::cout << this->getName() << " is broken and cannot repair itself"<< std::endl;
       return;
     }
-    if (_energyPoint == 0) {
-      std::cout << _name << " has 0 energy"<< std::endl;
+    if (this->getEnergyPoint() <= 0) {
+      std::cout << this->getName() << " has 0 energy and cannot repair itself"<< std::endl;
       return;
     }
-    this->setHitPoint(amount);
-    std::cout << _name << " has " << _hitPoint << " hit points left" << std::endl;
-    this->setEnergyPoint(-1);
-    std::cout << _name << " has " << _energyPoint << " engery points left" << std::endl;
+    this->adjustHitpoint(amount);
+    std::cout << this->getName() << " has " << this->getHitPoint() << " hit points left" << std::endl;
+    this->adjustEnergyPoint(-1);
+    std::cout << this->getName() << " has " << this->getEnergyPoint() << " engery points left" << std::endl;
 }
