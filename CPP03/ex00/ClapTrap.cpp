@@ -6,7 +6,7 @@
 /*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:06:27 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/18 20:51:21 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/19 17:49:37 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,27 @@ ClapTrap::~ClapTrap() {
     std::cout << "clap trap is detroyed\n";
 }
 
+
+ClapTrap::ClapTrap(ClapTrap& trapCopy) {
+    *this = trapCopy;
+    std::cout << this->getName() << "'s copy is ready\n";
+}
+
 ClapTrap::ClapTrap(std::string name) {
     this->_name = name;
     this->_attackDamage = 10;
     this->_energyPoint = 10;
     this->_hitPoint = 10;
     std::cout << this->getName() << " is ready\n";
+}
+
+ClapTrap &ClapTrap::operator=(ClapTrap& trapCopy) {
+    this->_name = trapCopy.getName();
+    this->_attackDamage = trapCopy.getAttackDamage();
+    this->_energyPoint = trapCopy.getEnergyPoint();
+    this->_hitPoint = trapCopy.getHitPoint();
+    std::cout << this->getName() << " is ready\n";
+    return *this;
 }
 
 void ClapTrap::setName(std::string name) {

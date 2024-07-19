@@ -6,7 +6,7 @@
 /*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:02:19 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/18 16:43:04 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/19 17:49:46 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ private:
 
 public:
     ClapTrap();
-    ClapTrap(const ClapTrap& trapCopy);
+    ClapTrap(ClapTrap& trapCopy);
     ~ClapTrap();
 
-    ClapTrap(std::string name);
+    ClapTrap &operator=(ClapTrap& trapCopy);
 
-    ClapTrap &operator=(const ClapTrap& trapCopy);
+    ClapTrap(std::string name);
 
     void setName(std::string name);
     void setHitPoint(unsigned int value);
