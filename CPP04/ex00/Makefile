@@ -6,14 +6,18 @@
 #    By: kaan <kaan@student.42.de>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/07 20:28:20 by kaan              #+#    #+#              #
-#    Updated: 2024/07/19 19:17:03 by kaan             ###   ########.fr        #
+#    Updated: 2024/07/20 16:22:36 by kaan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = polymorphism
 
 SRC = main.cpp\
-		Polymorphism.cpp\
+		Animal.cpp\
+		Cat.cpp\
+		Dog.cpp\
+		WrongAnimal.cpp\
+		WrongCat.cpp\
 
 OBJ	= $(SRC:.cpp=.o)
 
