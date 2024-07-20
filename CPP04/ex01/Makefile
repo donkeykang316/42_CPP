@@ -6,18 +6,17 @@
 #    By: kaan <kaan@student.42.de>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/07 20:28:20 by kaan              #+#    #+#              #
-#    Updated: 2024/07/20 16:22:36 by kaan             ###   ########.fr        #
+#    Updated: 2024/07/20 18:13:55 by kaan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = polymorphism
+NAME = brain
 
 SRC = main.cpp\
+		Brain.cpp\
 		Animal.cpp\
 		Cat.cpp\
 		Dog.cpp\
-		WrongAnimal.cpp\
-		WrongCat.cpp\
 
 OBJ	= $(SRC:.cpp=.o)
 
