@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
+/*   By: kaan <kaan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 16:18:30 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/20 16:28:12 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/23 14:14:49 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 
     WrongCat &operator=(const WrongCat &orginal);
 
-    void makeSound();
+    void makeSound() const;
 };
 
 #endif

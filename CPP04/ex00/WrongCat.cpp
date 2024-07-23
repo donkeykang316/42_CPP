@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
+/*   By: kaan <kaan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 16:26:15 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/20 16:28:36 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/23 14:15:07 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ WrongCat &WrongCat::operator=(const WrongCat &orginal) {
     return *this;
 }
 
-void WrongCat::makeSound() {
+void WrongCat::makeSound() const{
     std::cout << this->_type << " wrong cat miao" << std::endl;
 }
