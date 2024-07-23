@@ -6,7 +6,7 @@
 /*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 14:46:51 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/20 18:40:19 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/23 21:06:06 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 #ifndef CAT_HPP
 #define CAT_HPP
 
-class Cat : public Animal
-{
+class Cat : public Animal {
 private:
     Brain *_brain;
 
@@ -27,7 +26,9 @@ public:
 
     Cat &operator=(const Cat &orginal);
 
-    Brain *getBrain();
+    void makeSound() const;
+
+    Brain *getBrain() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 14:33:49 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/20 16:23:35 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/23 20:21:11 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ public:
     void setType(std::string type);
     std::string getType() const;
 
-    virtual void makeSound() const;
+    void makeSound() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 17:30:28 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/20 18:57:43 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/23 20:59:21 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,6 @@ Brain::~Brain() {
 
 Brain &Brain::operator=(const Brain &original) {
     std::cout << "Brain copy construced\n";
-    for (int i = 0; i != 100; ++i) {
-        this->_ideas[i] = original._ideas[i];
-    }
+    std::copy(original._ideas, original._ideas + 100, this->_ideas);
     return *this;
-}
-
-void Brain::setIdea(std::string idea, int i) {
-    this->_ideas[i] = idea;
-}
-
-std::string Brain::getIdea(int i) {
-    return _ideas[i];
 }

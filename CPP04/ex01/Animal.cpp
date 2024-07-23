@@ -6,7 +6,7 @@
 /*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 15:02:39 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/20 18:55:23 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/23 21:01:03 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ Animal &Animal::operator=(const Animal &orginal) {
     return *this;
 }
 
-void Animal::setType(std::string type) {
-    _type = type;
-}
-
 std::string Animal::getType() const {
     return _type;
+}
+
+void Animal::makeSound() const {
+    std::cout << "Animal makes sound" << std::endl;
 }

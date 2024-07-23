@@ -6,7 +6,7 @@
 /*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 16:38:50 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/20 18:57:29 by kaan             ###   ########.fr       */
+/*   Updated: 2024/07/23 20:57:42 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 #ifndef BRAIN_HPP
 #define BRAIN_HPP
 
-class Brain
-{
+class Brain {
 private:
-    std::string _ideas[100];
 
 public:
     Brain();
@@ -27,7 +25,8 @@ public:
 
     Brain &operator=(const Brain &original);
 
-    void setIdea(std::string idea, int i);
+    std::string _ideas[100];
+
     std::string getIdea(int i);
 };
 
