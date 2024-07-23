@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.cpp                                        :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaan <kaan@student.42.de>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/20 15:02:39 by kaan              #+#    #+#             */
-/*   Updated: 2024/07/23 21:27:11 by kaan             ###   ########.fr       */
+/*   Created: 2024/07/20 17:30:28 by kaan              #+#    #+#             */
+/*   Updated: 2024/07/23 20:59:21 by kaan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-AAnimal::AAnimal() {
-    std::cout << "Animal created\n";
+Brain::Brain() {
+    std::cout << "Brain construced\n";
 }
 
-AAnimal::AAnimal(const AAnimal &original) {
-    std::cout << "Animal copy created\n";
+Brain::Brain(const Brain &original) {
+    std::cout << "Brain copy construced\n";
     *this = original;
 }
 
-AAnimal::~AAnimal() {
-    std::cout << "Animal is been take away\n";
+Brain::~Brain() {
+    std::cout << "Brain destroyed\n";
 }
 
-AAnimal &AAnimal::operator=(const AAnimal &orginal) {
-    std::cout << "Animal copy created\n";
-    this->_type = orginal._type;
+Brain &Brain::operator=(const Brain &original) {
+    std::cout << "Brain copy construced\n";
+    std::copy(original._ideas, original._ideas + 100, this->_ideas);
     return *this;
-}
-
-std::string AAnimal::getType() const {
-    return _type;
 }

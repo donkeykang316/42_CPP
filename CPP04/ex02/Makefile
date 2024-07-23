@@ -6,13 +6,14 @@
 #    By: kaan <kaan@student.42.de>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/07 20:28:20 by kaan              #+#    #+#              #
-#    Updated: 2024/07/20 21:02:25 by kaan             ###   ########.fr        #
+#    Updated: 2024/07/23 21:28:49 by kaan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = aanimal
+NAME = brain
 
 SRC = main.cpp\
+		Brain.cpp\
 		AAnimal.cpp\
 		Cat.cpp\
 		Dog.cpp\
