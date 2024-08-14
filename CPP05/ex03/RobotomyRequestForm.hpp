@@ -1,3 +1,4 @@
+#pragma once
 #include <ctime>
 #include <cmath>
 #include "AForm.hpp"

@@ -6,7 +6,7 @@
 #    By: kaan <kaan@student.42.de>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/07 20:28:20 by kaan              #+#    #+#              #
-#    Updated: 2024/08/14 15:58:46 by kaan             ###   ########.fr        #
+#    Updated: 2024/08/14 16:55:44 by kaan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ SRC = main.cpp\
 		AForm.cpp\
 		ShrubberyCreationForm.cpp\
 		RobotomyRequestForm.cpp\
-		PresidentialPardonForm.cpp
+		PresidentialPardonForm.cpp\
+		Intern.cpp\
 
 OBJ	= $(SRC:.cpp=.o)
 
