@@ -6,13 +6,14 @@
 #    By: kaan <kaan@student.42.de>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/07 20:28:20 by kaan              #+#    #+#              #
-#    Updated: 2024/08/15 18:48:57 by kaan             ###   ########.fr        #
+#    Updated: 2024/08/15 19:18:02 by kaan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = easyfind
+NAME = span
 
 SRC = main.cpp\
+		Span.cpp\
 
 OBJ	= $(SRC:.cpp=.o)
 
