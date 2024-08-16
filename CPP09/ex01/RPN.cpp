@@ -24,10 +24,8 @@ void RPN::loadLine(const std::string& input) {
                 throw RPNException();
             }
             int a = _stack.top();
-            std::cout << "a: " << a << std::endl;
             _stack.pop();
             int b = _stack.top();
-            std::cout << "b: "<< b << std::endl;
             _stack.pop();
             if (token == "+") {
                 _stack.push((b + a));
@@ -39,7 +37,16 @@ void RPN::loadLine(const std::string& input) {
                 _stack.push((b / a));
             }
         } else {
+            if (token.size() > 1) {
+                throw RPNException();
+            }
+            if (isdigit(token[0]) == 0) {
+                throw RPNException();
+            }
             int x = std::strtol(token.c_str(), NULL, 10);
+            if (x > 9) {
+                throw RPNException();
+            }
             _stack.push(x);
         }
     }
