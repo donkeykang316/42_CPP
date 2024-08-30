@@ -114,5 +114,13 @@ int main() {
     }
     std::cout << std::endl << std::endl;
 
+    //test 8
+    std::cout << "Test 8" << std::endl;
+    Array<int> arrT8(5);
+    Array<int> arrT9(2);
+
+    arrT8 = arrT9;
+    std::cout << "Size of arr1 after assignment: " << arrT8.size() << std::endl; // Shall not have leaks
+
     return 0;
 }
