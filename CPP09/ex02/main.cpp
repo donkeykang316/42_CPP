@@ -20,10 +20,10 @@ int main(int ac, char** av) {
     }
     
     //vector
-    pm.sortMergeVector();
+    pm.outputVector();
 
     //deque
-    pm.sortMergeDeque();
+    pm.outputDeque();
 
     return 0;
 

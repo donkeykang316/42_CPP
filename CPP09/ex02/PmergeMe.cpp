@@ -26,7 +26,48 @@ void PmergeMe::readVector(const std::string& input) {
     _vector.push_back(value);
 }
 
-void PmergeMe::sortMergeVector() {
+void PmergeMe::vectorMergeSort() {
+    std::vector<int> temp(_vector.size());
+    vecMergeSort(_vector, temp, 0, _vector.size() - 1);
+}
+
+void PmergeMe::vecMergeSort(std::vector<int>& vector, std::vector<int>& temp, int left, int right) {
+    if (left < right) {
+        int center = (left + right) / 2;
+        
+        vecMergeSort(vector, temp, left, center);
+        vecMergeSort(vector, temp, center + 1, right);
+        vecMerge(vector, temp, left, center + 1, right);
+    }
+}
+
+void PmergeMe::vecMerge(std::vector<int>& vector, std::vector<int>& temp, int left, int right, int rightEnd) {
+    int leftEnd = right - 1;
+    int k = left;
+    int num = rightEnd - left + 1;
+
+    while (left <= leftEnd && right <= rightEnd) {
+        if (vector[left] <= vector[right]) {
+            temp[k++] = vector[left++];
+        } else {
+            temp[k++] = vector[right++];
+        }
+    }
+
+    while (left <= leftEnd) {
+        temp[k++] = vector[left++];
+    }
+
+    while (right <= rightEnd) {
+        temp[k++] = vector[right++];
+    }
+
+    for (int i = 0; i < num; i++, rightEnd--) {
+        vector[rightEnd] = temp[rightEnd];
+    }
+}
+
+void PmergeMe::outputVector() {
     std::cout << "Before:\t";
     for(std::vector<int>::const_iterator it = _vector.begin(); it != _vector.end(); ++it) {
         ++_element;
@@ -37,7 +78,7 @@ void PmergeMe::sortMergeVector() {
     //store the start time
     std::clock_t start = std::clock();
 
-    std::sort(_vector.begin(), _vector.end());
+    vectorMergeSort();
 
     //store the end time
     std::clock_t end = std::clock();
@@ -59,9 +100,50 @@ void PmergeMe::readDeque(const std::string& input) {
     _deque.push_back(value);
 }
 
-void PmergeMe::sortMergeDeque() {
+void PmergeMe::dequeMergeSort() {
+    std::deque<int> temp(_deque.size());
+    deqMergeSort(_deque, temp, 0, _deque.size() - 1);
+}
+
+void PmergeMe::deqMergeSort(std::deque<int>& deque, std::deque<int>& temp, int left, int right) {
+    if (left < right) {
+        int center = (left + right) / 2;
+        
+        deqMergeSort(deque, temp, left, center);
+        deqMergeSort(deque, temp, center + 1, right);
+        deqMerge(deque, temp, left, center + 1, right);
+    }
+}
+
+void PmergeMe::deqMerge(std::deque<int>& deque, std::deque<int>& temp, int left, int right, int rightEnd) {
+    int leftEnd = right - 1;
+    int k = left;
+    int num = rightEnd - left + 1;
+
+    while (left <= leftEnd && right <= rightEnd) {
+        if (deque[left] <= deque[right]) {
+            temp[k++] = deque[left++];
+        } else {
+            temp[k++] = deque[right++];
+        }
+    }
+
+    while (left <= leftEnd) {
+        temp[k++] = deque[left++];
+    }
+
+    while (right <= rightEnd) {
+        temp[k++] = deque[right++];
+    }
+
+    for (int i = 0; i < num; i++, rightEnd--) {
+        deque[rightEnd] = temp[rightEnd];
+    }
+}
+
+void PmergeMe::outputDeque() {
     std::clock_t start = std::clock();
-    std::sort(_deque.begin(), _deque.end());
+    dequeMergeSort();
     std::clock_t end = std::clock();
     /*std::cout << "After:\t";
     for (std::deque<int>::const_iterator it = _deque.begin(); it != _deque.end(); ++it) {

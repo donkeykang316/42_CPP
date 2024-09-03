@@ -19,11 +19,17 @@ public:
 
     //vector
     void readVector(const std::string& input);
-    void sortMergeVector();
+    void vectorMergeSort();
+    void vecMergeSort(std::vector<int>& vector, std::vector<int>& temp, int left, int right);
+    void vecMerge(std::vector<int>& vector, std::vector<int>& temp, int left, int right, int rightEnd);
+    void outputVector();
 
     //deque
     void readDeque(const std::string& input);
-    void sortMergeDeque();
+    void dequeMergeSort();
+    void deqMergeSort(std::deque<int>& deque, std::deque<int>& temp, int left, int right);
+    void deqMerge(std::deque<int>& deque, std::deque<int>& temp, int left, int right, int rightEnd);
+    void outputDeque();
 
     class Error : public std::exception {
     public:
